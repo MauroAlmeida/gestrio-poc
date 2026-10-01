@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactos - GESTRIO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">GESTRIO</a>
+      
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">
+      <label for="menu-toggle" class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="nav-links">
+        <a href="index.html">A Empresa</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="contactos.html" class="active">Contactos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="contact-layout">
+      <div class="card">
+        <h3 style="color: var(--primary); margin-bottom: 1.25rem;">Informações Gerais</h3>
+        
+        <div class="contact-item">
+          <strong>Morada:</strong><br>
+          Rua João Crisóstomo de Sá, nº 18, 4º Dtº<br>
+          2745-028 Queluz, Sintra
+        </div>
+
+        <div class="contact-item">
+          <strong>Telefone:</strong><br>
+          <a href="tel:351219225070" style="color: var(--primary); text-decoration: none; font-weight: 500;">
+            +351 219 225 070
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <strong>Email Oficial:</strong><br>
+          <a href="mailto:geral@gestrio.pt" style="color: var(--primary); text-decoration: none; font-weight: 500;">
+            geral@gestrio.pt
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <strong>Dados Fiscais:</strong><br>
+          NIF / NIPC: 503888788
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Envie-nos uma Mensagem</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Preencha o formulário para contacto direto.</p>
+
+        <!-- Web3Forms -->
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+          <input type="hidden" name="subject" value="Novo Contacto - Site Gestrio">
+          <input type="checkbox" name="botcheck" style="display: none;">
+
+          <label for="name">Nome Completo</label>
+          <input type="text" id="name" name="name" required placeholder="Ex: Maria Fernandes">
+
+          <label for="email">Endereço de Email</label>
+          <input type="email" id="email" name="email" required placeholder="Ex: maria@empresa.pt">
+
+          <label for="phone">Telefone (Opcional)</label>
+          <input type="tel" id="phone" name="phone" placeholder="Ex: 910 000 000">
+
+          <label for="message">Mensagem</label>
+          <textarea id="message" name="message" rows="4" required placeholder="Descreva brevemente o seu pedido..."></textarea>
+
+          <button type="submit">Enviar Mensagem</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 GESTRIO - Gestão e Consultadoria, Lda. | NIF: 503888788</p>
+  </footer>
+</body>
+</html>

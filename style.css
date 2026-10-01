@@ -1,0 +1,247 @@
+:root {
+  --primary: #8b0000;
+  --primary-hover: #6b0000;
+  --primary-light: #fdf2f2;
+  --text-dark: #1f2937;
+  --text-muted: #4b5563;
+  --border: #e5e7eb;
+  --bg-light: #f9fafb;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header & Nav */
+header {
+  background: var(--white);
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+/* CSS-Only Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.menu-icon span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-dark);
+  margin: 5px 0;
+  transition: 0.2s ease;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  margin-left: 1.5rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.15s ease;
+  padding: 0.5rem 0;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);
+}
+
+/* Main Layout */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+  flex: 1;
+  width: 100%;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+/* Form Styles */
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* 16px font-size prevents iOS Safari from automatically zooming into the form */
+input, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 16px;
+  background: var(--bg-light);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--white);
+}
+
+button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+button:hover {
+  background: var(--primary-hover);
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 2rem;
+}
+
+.contact-item {
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+footer {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  padding: 2rem 1.25rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Mobile Breakpoints (< 768px) */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-bottom: 2px solid var(--border);
+    padding: 1rem 1.25rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Show navigation when toggle is checked */
+  .menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    margin: 0.35rem 0;
+    padding: 0.6rem 0;
+    font-size: 1.05rem;
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  main {
+    padding: 1.5rem 1rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
